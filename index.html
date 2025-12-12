@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Application Bug RAVAGE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="https://raw.githack.com/DaffaDeveloper/apkstyle/main/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand">
+     <i class="fas fa-user-secret"></i> <h1>RAVAGE</h1>
+  </div>
+  <div id="userBadge" class="chip hidden">
+    <i class="fas fa-user"></i><span id="who"></span>
+  </div>
+  <div class="flex" style="gap:12px;">
+    <button id="btnProfile" class="hamburger hidden">
+      <i class="fa-solid fa-user-circle"></i>
+    </button>
+    <button id="btnHamburger" class="hamburger hidden" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<aside id="drawer" class="drawer">
+  <nav class="menu">
+    <h4>Dashboard</h4>
+    <a href="#" data-view="dashboard" class="active"><i class="fa-solid fa-home"></i> Home</a>
+        <h4>FEATURES ATTACK</h4>
+    <a href="#" data-view="bug"><i class="fab fa-whatsapp"></i>  Bug</a>
+    <div id="adminSection" class="hidden">
+      <h4>MANAGE</h4>
+      <a href="#" data-view="accounts"><i class="fa-solid fa-user-gear"></i> Manage Account</a>      
+    </div>
+  </nav>
+</aside>   
+  <main id="view-login" class="hero">
+    <div class="glow"></div>
+    <section class="login">
+      <div class="illus reveal left">         
+<span class="badge"><i class="fa-solid fa-bug"></i> BUG</span>
+<h2 style="margin-top:6px; margin-bottom:10px;">
+  APPLICATION <span style="background:linear-gradient(90deg,var(--primary),var(--secondary));
+                       -webkit-background-clip:text;
+                       background-clip:text;
+                       color:transparent;">RAVAGE</span>
+</h2>
+<p style="color:var(--text); line-height:1.6; max-width:480px;">
+APPLICATION RAVAGE ADALAH SEBUAH APLIKASI YANG BERTAMPILAN DESAIN UI YANG MENYEDIAKAN FITUR LOGIN DAN MANAJEMEN AKUN, DDOS, BUG SENDER, TOOLS UPLOAD GITHUB, CHAT AI, PEMUTAR MUSIK, SERTA DILENGKAPI KONTROL PENUH OLEH ADMIN.
+</p>
+<div class="space"></div>
+<div class="flex" style="gap:10px; flex-wrap:wrap;">
+  <span class="chip"><i class="fa-solid fa-paper-plane"></i> Sender</span>
+  <span class="chip"><i class="fa-solid fa-server"></i> Server</span>
+  <span class="chip"><i class="fa-solid fa-shield"></i> Protection</span>
+</div>
+      </div>
+      <div class="card login-card reveal right" style="max-width:420px; width:100%">
+        <h3 class="title">Login</h3>
+        <p class="subtitle">Silahkan Masukan Akun Yang Telah terdaftar.</p>
+        <form id="formLogin">
+          <div class="row">
+            <div>
+              <label>Username</label>
+              <input id="username" class="input" placeholder="nama pengguna" required />
+            </div>
+            <div>
+              <label>Password</label>
+              <input id="password" class="input" type="password" placeholder="••••••" required />
+            </div>
+          </div>
+          <div class="space"></div>
+          <button class="btn" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+          <div id="loginMsg" class="subtitle" style="margin-top:12px"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+<main id="view-dashboard" class="container hidden">
+  <section class="card reveal">
+    <h3 class="title">
+      <span class="bg1">Selamat datang</span>
+    </h3>
+    <p class="subtitle">
+      <span class="bg2">Silahkan Klik Opsi Menu Yang Berada Di Kanan Atas.</span>
+    </p>
+    <p class="subtitle">
+      <span class="bg3">Status user adalah untuk <b>Reseller</b> 
+        dan Status Admin adalah untuk <b>Partner</b>
+      </span>
+    </p>
+    <div class="flex">
+      <span class="chip"><i class="fa-solid fa-address-card"></i> Status :</span>
+      <span class="chip"><i class="fa-solid fa-user-shield"></i> <span id="roleChip">user</span></span>
+    </div>
+    <div class="slideshow-box">
+      <div class="slide-box active">
+        <img src="https://k.top4top.io/p_35803c8sj1.jpg" alt="Slide 1">
+        <div class="slide-text">BRUTALY</div>
+      </div>
+      <div class="slide-box">
+        <img src="https://k.top4top.io/p_35803c8sj1.jpg" alt="Slide 2">
+        <div class="slide-text">RAVAGE</div>
+      </div>
+      <div class="slide-box">
+        <img src="https://k.top4top.io/p_35803c8sj1.jpg" alt="Slide 3">
+        <div class="slide-text">SOMEONE</div>
+      </div>
+    </div>
+  </section>
+</main>   
+  <main id="view-numbers" class="container hidden">
+    <section class="card reveal left">
+      <h3 class="title"><i class="fa-solid fa-square-plus"></i> Tambah Nomor</h3>
+      <p class="subtitle">Masukkan nomor (contoh: 62812345678).</p>
+      <div class="row">
+        <input id="numberInput" class="input" placeholder="Hanya angka…" />
+        <button id="btnAddNumber" class="btn"><i class="fa-solid fa-plus"></i> Tambah</button>
+      </div>
+      <div id="numMsg" class="subtitle" style="margin-top:12px"></div>
+    </section>
+  </main>
+<main id="view-ddos" class="container hidden" style="display:flex; justify-content:center;">
+  <section class="card reveal" style="width:100%; max-width:760px; margin:22px auto;">
+    <h3 class="title" style="text-align:center;">
+      <i class="fa-solid fa-bolt"></i> FEATURES DDOS
+    </h3>
+    <p class="subtitle" style="text-align:center; margin-bottom:12px;">
+      Gunakan <code>Fitur ini dengan</code> Bijak.
+    </p>
+    <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <input id="ddosTargetInput" class="input" placeholder="Url/IP" style="flex:1; max-width:520px;" />
+      <input id="ddosPortInput" class="input" placeholder="Port (30)" style="width:120px" />
+      <input id="ddosDurationInput" class="input" placeholder="Durasi" style="width:140px" />
+    </div>
+    <div id="ddosMethodGrid" class="ddos-grid">
+      <div class="ddos-card" data-cmd=".http">
+        <i class="fa-solid fa-globe"></i>
+        <div><h4>HTTP</h4><p>attack</p></div>
+      </div>
+      <div class="ddos-card" data-cmd=".tcp">
+        <i class="fa-solid fa-plug"></i>
+        <div><h4>NETWORK</h4><p>udp</p></div>
+      </div>
+      <div class="ddos-card" data-cmd=".udp">
+        <i class="fa-solid fa-wifi"></i>
+        <div><h4>STEALTH</h4><p>down</p></div>
+      </div>
+      <div class="ddos-card" data-cmd=".slow">
+        <i class="fa-solid fa-network-wired"></i>
+        <div><h4>BYPASS</h4><p>Cloudflare</p></div>
+      </div>
+    </div>
+<div class="ddos-send-box">
+  <button id="sendDdosBtn" class="glass-btn">
+    <i class="fa-solid fa-paper-plane"></i> SEND DDOS
+  </button>
+  <div class="msg-wrap">
+    <p id="ddosMsg" class="msg-glass"></p>
+  </div>
+</div>
+<div class="status-row">
+  <section class="card">
+    <h3 class="title">ACTIVITY</h3>
+    <p class="subtitle">Usage</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-bolt" style="font-size:42px; color:var(--primary);"></i>
+      <p id="activityCount" style="margin-top:8px; font-size:18px; font-weight:600;">0</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="title">SERVERS</h3>
+    <p class="subtitle">Status</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-server" style="font-size:42px; color:var(--primary);"></i>
+      <p id="serverStatus" style="margin-top:8px; font-size:18px; font-weight:600;">OFF</p>
+    </div>
+  </section>
+</div>
+</main>
+<main id="view-spampairing" class="container hidden" style="display:flex; justify-content:center;">
+  <section class="card reveal spampair-card" style="width:100%; max-width:760px; margin:22px auto;">
+    <header style="display:flex; flex-direction:column; gap:6px; align-items:center;">
+      <h3 class="title" style="text-align:center; margin-bottom:0;">
+        <i class="fa-solid fa-retweet" style="margin-right:8px;"></i> Features Spam Pairing
+      </h3>
+      <p class="subtitle" style="text-align:center; max-width:720px;">
+        Fitur ini melakukan pairing code dengan secara spam.</b></code>
+      </p>
+    </header>
+    <div class="spampair-form" style="margin-top:14px;">
+      <div class="inputs">
+  <input id="spampairNumberInput" class="input" 
+         type="tel" inputmode="numeric" pattern="[0-9]*"
+         placeholder="Example: 6281234567890" />
+  <input id="spampairDurationInput" class="input" 
+         type="tel" inputmode="numeric" pattern="[0-9]*"
+         placeholder="Example: 1" />
+</div>
+      <div class="method-row" style="margin-top:12px;">
+        <div class="ddos-card selected" data-cmd=".spampair" aria-hidden="true">
+          <i class="fa-solid fa-retweet"></i>
+          <div>
+            <h4 style="margin:0;">Spam Pairing</h4>
+            <p style="margin:4px 0 0; font-size:13px; color:var(--muted);">Drop Spam!</p>
+          </div>
+        </div>
+      </div>
+      <div class="ddos-send-box" style="margin-top:18px;">
+        <button id="sendSpampairBtn" class="glass-btn spampair-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>SEND SPAM PAIR</span>
+        </button>
+
+        <div class="msg-wrap">
+          <p id="spampairMsg" class="msg-glass"></p>
+        </div>
+      </div>
+    </div>
+    <div class="status-row">
+  <section class="card">
+    <h3 class="title">ACTIVITY</h3>
+    <p class="subtitle">Usage</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-bolt" style="font-size:42px; color:var(--primary);"></i>
+      <p id="activityCount" style="margin-top:8px; font-size:18px; font-weight:600;">0</p>
+    </div>
+  </section>
+  <section class="card">
+    <h3 class="title">SERVERS</h3>
+    <p class="subtitle">Status</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-server" style="font-size:42px; color:var(--primary);"></i>
+      <p id="serverStatus" style="margin-top:8px; font-size:18px; font-weight:600;">OFF</p>
+    </div>
+  </section>
+</div>
+</main>
+<main id="view-bug" class="container hidden">
+  <div class="bug-wrapper center-wrapper">
+    <section class="card bug-card-center">
+      <h3 class="title"><i class="fa-solid fa-bug"></i> Features Bug</h3>
+      <p class="subtitle">Masukkan nomor target lalu pilih type bug.</p>
+
+      <div class="input-group" style="margin-bottom:16px; text-align:center;">
+  <input type="tel" id="bugNumber" class="input" 
+         inputmode="numeric" pattern="[0-9]*"
+         placeholder="Example: 62123..." 
+         style="max-width:320px; margin:0 auto;" />
+</div>
+      <div class="bug-menu">
+        <div class="bug-card" data-cmd=".forceclose">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <div>
+            <h4>Force Close</h4>
+            <p>Open and close repeat</p>
+          </div>
+        </div>
+        <div class="bug-card" data-cmd=".delay">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <h4>Delay Invisible</h4>
+            <p>Message Delay</p>
+          </div>
+        </div>
+        <div class="bug-card" data-cmd=".infinity">
+          <i class="fa-solid fa-infinity"></i>
+          <div>
+            <h4>Crash Infinity</h4>
+            <p>Loop crash</p>
+          </div>
+        </div>
+        <div class="bug-card" data-cmd=".iphonecrash">
+          <i class="fa-brands fa-apple"></i>
+          <div>
+            <h4>iPhone Crash</h4>
+            <p>Crash khusus iOS</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; text-align:center;">
+        <button id="sendBugBtn" class="btn"><i class="fa-solid fa-paper-plane"></i> Send Bug</button>
+      </div>
+<div class="status-row">
+  <section class="card">
+    <h3 class="title">ACTIVITY</h3>
+    <p class="subtitle">Usage</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-bolt" style="font-size:42px; color:var(--primary);"></i>
+      <p id="activityCount" style="margin-top:8px; font-size:18px; font-weight:600;">0</p>
+    </div>
+  </section>
+  <section class="card">
+    <h3 class="title">SERVERS</h3>
+    <p class="subtitle">Status</p>
+    <div style="text-align:center; margin-top:12px;">
+      <i class="fas fa-server" style="font-size:42px; color:var(--primary);"></i>
+      <p id="serverStatus" style="margin-top:8px; font-size:18px; font-weight:600;">OFF</p>
+    </div>
+  </section>
+</div>
+</main>
+ <main id="view-accounts" class="container hidden">
+    <section class="card reveal">
+      <h3 class="title"><i class="fa-solid fa-user-gear"></i> Manage Account</h3>
+      <p class="subtitle">Buat & hapus akun. Hanya untuk status <b>admin</b>.</p>
+      <div class="row">
+  <input id="newUser" class="input" placeholder="username" />
+  <input id="newPass" class="input" placeholder="password" />
+</div>
+
+<div class="row" style="margin-top:12px;">
+  <input id="newExpired" class="input"
+         type="tel"
+         inputmode="numeric"
+         pattern="[0-9]*"
+         maxlength="4"
+         placeholder="contoh: 1 (hari) / masukkan angka saja" />
+</div>
+    <div class="row">
+<div class="row" style="margin-top:15px; flex-direction:column; gap:8px; flex:1">
+  <label for="newRole" style="font-size:14px; font-weight:600; color:var(--text); margin-left:4px;">
+    Pilih Status
+  </label>
+  <div class="dropdown-glass">
+    <button id="roleBtn">
+      <span style="display:flex;align-items:center;gap:8px;justify-content:center;width:100%">
+        <i class="fa-solid fa-user"></i> User
+      </span> ▾
+    </button>
+    <ul id="roleList" class="hidden">
+      <li data-value="user"><i class="fa-solid fa-user"></i> User</li>
+      <li data-value="admin"><i class="fa-solid fa-user-shield"></i> Admin</li>
+    </ul>
+  </div>
+  <input type="hidden" id="newRole" value="user">
+</div>
+
+<div class="row" style="margin-top:15px">
+  <button id="btnCreate" class="btn">
+    <i class="fa-solid fa-user-plus"></i> Buat Akun
+  </button>
+</div>
+      <div id="accMsg" class="subtitle" style="margin-top:12px"></div>
+<div class="space"></div>
+<div class="card">
+  <h4 class="title" style="font-size:18px">Akun Yang Terdaftar</h4>
+  <div style="overflow:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Username</th>
+          <th>Status</th>
+          <th>Expired</th>
+          <th>Opsi</th>
+        </tr>
+      </thead>
+      <tbody id="accountsTable"></tbody>
+    </table>
+  </div>
+</div>
+</section>
+</main>  
+<main id="view-accounts-blocked" class="hero hidden" style="display:flex;align-items:center;justify-content:center;">
+  <section class="card reveal" style="max-width:420px; width:100%; text-align:center; padding:32px;">
+    <div class="card" style="width:120px; height:120px; margin:0 auto 20px;
+                             display:flex; align-items:center; justify-content:center;">
+      <i class="fa-solid fa-lock" style="font-size:64px; color:var(--primary);"></i>
+    </div>
+    <h3 class="title" style="margin-bottom:10px;">Maaf Anda Bukan Status Admin</h3>
+    <p class="subtitle" style="margin-bottom:22px;">Silahkan Beli Akun Status Admin</p>
+    <div class="card" style="display:inline-flex; padding:8px 14px; border-radius:14px; margin-top:10px;">
+      <a href="https://t.me/daffadevv" target="_blank" 
+         style="display:inline-flex; align-items:center; gap:8px;
+                font-size:14px; font-weight:600;
+                color:white; text-decoration:none;">
+        <i class="fas fa-external-link-alt"></i> Buy
+      </a>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+  <nav id="bottomNav" class="bottom-nav hidden">
+    <a href="#" data-view="dashboard"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="#" data-view="bug"><i class="fab fa-whatsapp"></i><span>Bug</span></a>
+    <a href="#" data-view="accounts"><i class="fa-solid fa-user-gear"></i><span>Admin</span></a>
+  </nav>
+  <div id="profileCard" class="profile-card">
+    <div class="card-glass">
+      <button class="close-btn" id="closeProfile">×</button>
+      <h3 class="title"><i class="fa-solid fa-user"></i> Profil</h3>
+      <p><b>Username:</b> <span id="profileUsername"></span></p>
+      <p><b>Password:</b> <span id="profilePassword"></span></p>
+      <p><b>Expired:</b> <span id="profileExpired"></span></p>
+      <div class="space"></div>
+      <button class="btn danger" id="profileLogout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </div>
+  <div id="notifPopup" class="notif-popup hidden">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="notifText">Berhasil!</span>
+  </div>,
+</body>
+</html>
