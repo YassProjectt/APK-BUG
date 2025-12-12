@@ -1,6 +1,6 @@
 //===========[ API GITHUB ]=================//
 
-const API_LOGIN = 'https://api.github.com/repos/NAMA-GITHUB-LU/NAMA-REPOSITORI-LU/contents/db.json';
+const API_LOGIN = 'https://api.github.com/repos/YassProjectt/APK-BUG/contents/db.json';
 const TOKEN_LOGIN = 'TEMPEL TOKEN LU';
 
 const API_BUGS   = 'https://api.github.com/repos/NAMA-GITHUB-LU/NAMA-REPOSITORI-LU/contents/sender.json'; 
