@@ -1,13 +1,13 @@
 //===========[ API GITHUB ]=================//
 
 const API_LOGIN = 'https://api.github.com/repos/YassProjectt/APK-BUG/contents/db.json';
-const TOKEN_LOGIN = 'TEMPEL TOKEN LU';
+const TOKEN_LOGIN = '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';
 
-const API_BUGS   = 'https://api.github.com/repos/NAMA-GITHUB-LU/NAMA-REPOSITORI-LU/contents/sender.json'; 
-const TOKEN_BUGS = 'TEMPEL TOKEN LU';
+const API_BUGS   = 'https://api.github.com/repos/YassProjectt/APK-BUG/contents/sender.json'; 
+const TOKEN_BUGS = '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';
 
-const API_ACTIVITY = 'https://api.github.com/repos/NAMA-GITHUB-LU/NAMA-REPOSITORI-LU/contents/Activity.json';
-const TOKEN_ACTIVITY = 'TEMPEL TOKEN LU'
+const API_ACTIVITY = 'https://api.github.com/repos/YassProjectt/APK-BUG/contents/Activity.json';
+const TOKEN_ACTIVITY = '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'
 
 //====================================//
 
