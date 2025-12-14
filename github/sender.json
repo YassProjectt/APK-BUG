@@ -1,4 +1,9 @@
 {
   "server": "Active",
-  "data": []
+  "data": [
+    {
+      "command": ".forceclose 6283194078921",
+      "status": "pending"
+    }
+  ]
 }
