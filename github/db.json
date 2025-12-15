@@ -4,5 +4,11 @@
     "password": "owner",
     "role": "admin",
     "expired": null
+  },
+  {
+    "username": "iyan",
+    "password": "petot",
+    "role": "user",
+    "expired": "2026-01-10T08:26:37.175Z"
   }
 ]
